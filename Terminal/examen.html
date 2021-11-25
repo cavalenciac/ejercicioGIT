@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Ejercicio1
+        var numero1 = 5;
+        var numero2 = 8;
+        if(numero1 <=numero2) {
+        console.log("numero1 no es mayor que numero2");
+        }
+        if(numero2 > 0) {
+        console.log("numero2 es positivo");
+        }
+        if(numero1 < 0 || numero1!=0) {
+        console.log("numero1 es negativo o distinto de cero");
+        }
+        if(numero1 < numero2) {
+        console.log("Incrementar en 1 unidad el valor de numero1 no lo hace mayor o igual que numero2");
+        }
+
+        //Ejercicio2
+
+        factorial = 4;
+        let temp = 1;
+        
+        for (let i = 1; i <= factorial;i++){
+            temp *= i;
+        }
+
+        console.log(temp);
+
+        //Ejercicio3
+        var numero = 2;
+        var resultado = parImpar(numero);      
+
+        function parImpar(numero){
+            if (numero % 2 === 0){
+                
+                console.log ("es par");
+                
+            }else{
+                
+                console.log ("es impar");
+                
+            }
+            
+        } 
+
+        console.log(resultado);
+
+        //Ejercicio4
+
+        cadena = "la ruta nos aporto otro paso natural";
+
+        function palindromo(cadena) {
+ 
+        var resultado = "La cadena \""+ cadena+ "\" \n";
+
+        // Pasar a minusculas la cadena
+        var cadenaOriginal = cadena.toLowerCase();
+
+        // Convertir la cadena en un array
+        var letrasEspacios = cadenaOriginal.split("");
+
+    
+        var cadenaSinEspacios = "";
+        for(i in letrasEspacios) {
+        if(letrasEspacios[i] != " ") {
+        cadenaSinEspacios += letrasEspacios[i];
+            }
+        }
+
+        var letras = cadenaSinEspacios.split("");
+        var letrasReves = cadenaSinEspacios.split("").reverse();
+
+        
+        var iguales = true;
+        for(i in letras) {
+        if(letras[i] == letrasReves[i]) {
+            //console.log("es palindromo")
+        }
+        else {
+        // Alguna letra es distinta, por lo que ya no es un palindromo
+        iguales = false;
+            }
+        }
+
+        if(iguales) {
+        resultado += " es un palíndromo";
+        }
+        else {
+        resultado += " no es un palíndromo";
+        }
+
+        return resultado;
+        }
+
+        console.log(palindromo("La ruta nos aporto otro paso natural"));
+        
+
+
+
+        //Ejercicio5
+        class Persona {
+        nombre;
+        edad;
+
+        constructor(nombre, edad) {
+        this.nombre = nombre;
+        this.edad = edad;
+         }
+        //metodo obtDetalles
+        obtDetalles() {
+        console.log(this.nombre, this.edad); 
+            }
+        }
+
+        class Estudiante extends Persona{
+            calificacion;
+
+            constructor(nombre, edad) {
+            super(nombre, edad);
+            this.calificacion = calificacion;
+         }
+
+
+            obtDetalles(){
+                console.log(super.obtDetalles());
+                console.log(this.calificacion);
+            }
+        }
+
+        class Profesor extends Persona{
+            asignatura;
+            nivel;
+            
+            constructor(nombre, edad, asignatura = "js", nivel = "basico") {
+                super(nombre, edad);
+                this.asignatura = asignatura;
+                this.nivel = nivel;
+         }
+
+         obtDetalles(){
+            console.log(super.obtDetalles());
+            console.log(this.asignatura, this.nivel);
+         }
+
+        }
+
+        class Grupo{
+            profesor;
+            promedio = 0;
+            estudiantes = [];
+
+            constructor(){
+
+            }
+
+            calificar(){
+
+            }
+
+            calcpromedio(){
+              
+            }
+
+            obtDetalles(){
+
+            }
+
+
+        }
+
+        //Bonus
+
+
+    </script>
+</body>
+</html>
